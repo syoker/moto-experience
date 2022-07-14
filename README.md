@@ -1,7 +1,7 @@
 # Moto Experience
 
 ## Description
-This module installs Motorola Features on Motorola One Fusion.
+This module adds the features of the official Motorola One Fusion firmware (you can choose) in GSI.
 
 ## Notes
 - There are intentions to create an online version, but for now there is only an offline version.
@@ -9,12 +9,12 @@ This module installs Motorola Features on Motorola One Fusion.
 ## Requirements
 - Android 10 on up
 - ARM64 architecture
-- Motorola One Fusion
 - Magisk
+- Motorola One Fusion
 
 ## Content
-- Moto Bootanimation 2020
 - Moto Actions
+- Moto Bootanimation 2013, 2020 & 2021 (you can choose)
 - Moto Live Wallpaper (update from Play Store)
 - Moto Widget Clock (with moto font)
 
