@@ -17,7 +17,6 @@ This module installs Motorola Features on Motorola One Fusion.
 - Moto Actions
 - Moto Live Wallpaper (update from Play Store)
 - Moto Widget Clock (with moto font)
-- Moto Radio
 
 ## Tested on device
 - Motorola One Fusion
