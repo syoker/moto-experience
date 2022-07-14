@@ -16,7 +16,7 @@ This module adds the features of the official Motorola One Fusion firmware (you 
 - Moto Actions
 - Moto Bootanimation 2013, 2020 & 2021 (you can choose)
 - Moto Live Wallpaper (update from Play Store)
-- Moto Widget Clock (with moto font)
+- Moto Clock Widget (with Moto Font)
 
 ## Tested on device
 - Motorola One Fusion
