@@ -154,7 +154,7 @@ on_install() {
     sleep 1
   else
     ui_print "  Installing Moto Widget"
-    unzip $MODPATH/system/motowidget.zip -d $MODPATH/system/
+    unzip -u $MODPATH/system/motowidget.zip -d $MODPATH/system/
     ui_print "  Done"
     ui_print ""
     rm $MODPATH/system/motowidget.zip
