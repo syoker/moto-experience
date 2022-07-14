@@ -62,12 +62,12 @@ on_install() {
     SELECT=volume_key
 
     if "$SELECT"; then
-      ui_print "  Removing Moto Actions"
+      ui_print "  Removing..."
       ui_print ""
       rm $MODPATH/system/motoactions.zip
       sleep 1
     else
-      ui_print "  Installing Moto Actions"
+      ui_print "  Installing..."
       unzip $MODPATH/system/motoactions.zip -d $MODPATH/system/priv-app/
       ui_print "  Done"
       ui_print ""
@@ -131,12 +131,12 @@ on_install() {
     ui_print "  Volume down(-): No"
 
     if "$SELECT"; then
-      ui_print "  Removing Moto Walls"
+      ui_print "  Removing..."
       ui_print ""
       rm $MODPATH/system/motowalls.zip
       sleep 1
     else
-      ui_print "  Installing Moto Walls"
+      ui_print "  Installing..."
       unzip $MODPATH/system/motowalls.zip -d $MODPATH/system/
       ui_print "  Done"
       ui_print ""
@@ -144,17 +144,17 @@ on_install() {
       sleep 1
     fi
 
-    ui_print "• Do you want to install Moto Widget?"
+    ui_print "• Do you want to install Moto Clock Widget?"
     ui_print "  Volume up(+): Yes"
     ui_print "  Volume down(-): No"
 
     if "$SELECT"; then
-      ui_print "  Removing Moto Widget"
+      ui_print "  Removing..."
       ui_print ""
       rm $MODPATH/system/motowidget.zip
       sleep 1
     else
-      ui_print "  Installing Moto Widget"
+      ui_print "  Installing..."
       unzip -n $MODPATH/system/motowidget.zip -d $MODPATH/system/
       ui_print "  Done"
       ui_print ""
