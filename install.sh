@@ -64,14 +64,14 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motoactions.zip
+      rm $MODPATH/system/motoactions.apk
       sleep 1
     else
       ui_print "  Installing..."
-      unzip $MODPATH/system/motoactions.zip -d $MODPATH/system/priv-app/
+      mkdir -p $MODPATH/system/priv-app
+      mv -f $MODPATH/system/motoactions.apk $MODPATH/system/priv-app/MotoActions.apk
       ui_print "  Done"
       ui_print ""
-      rm $MODPATH/system/motoactions.zip
       sleep 1
     fi
 
