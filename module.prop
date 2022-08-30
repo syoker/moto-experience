@@ -1,7 +1,7 @@
 id=motoexperience
 name=Moto Experience
-version=v1.1.0
-versionCode=2
+version=v1.1.1
+versionCode=3
 author=@Syoker
 description=This module adds the features of the official Motorola One Fusion firmware (you can choose) in GSI.
 updateJson=
