@@ -46,6 +46,37 @@ volume_key() {
   fi
 }
 
+remove-motowalls() {
+  rm $MODPATH/system/system_ext/priv-app/MotoLiveWallpaper3
+  rm $MODPATH/system/system_ext/etc/permissions/afw-com.motorola.livewallpaper.xml
+  rm $MODPATH/system/system_ext/etc/permissions/feature-com.motorola.motolivewallpaper3.xml
+  rm $MODPATH/system/system_ext/sysconfig/hiddenapi-whitelist-com.motorola.livewallpaper.xml
+  rm $MODPATH/system/product/app/MotoLiveWallpaper
+  rm $MODPATH/system/product/app/MotoLiveWallpaper2
+  rm $MODPATH/system/product/app/MotoWalls
+  rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.support.astro.xml
+  rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.support.racer.xml
+  rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.support.titan.xml
+  rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.xml
+  rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper3.xml
+  rm $MODPATH/system/product/etc/sysconfig/hiddenapi-whitelist-com.motorola.livewallpaper.xml
+  rm $MODPATH/system/product/priv-app/MotoLiveWallpaper3
+}
+
+remove-motowidget() {
+  rm $MODPATH/system/etc/fonts.xml
+  rm $MODPATH/system/fonts
+  rm $MODPATH/system/product/app/TimeWeather
+  rm $MODPATH/system/product/etc/permissions/com.motorola.timeweatherwidget.xml
+  rm $MODPATH/system/product/etc/sysconfig/hiddenapi-whitelist-com.motorola.timeweatherwidget.xml
+  rm $MODPATH/system/product/overlay/FontArchivoSemiBold
+  rm $MODPATH/system/product/overlay/FontBarlowSource
+  rm $MODPATH/system/product/overlay/FontExo2RegularSource
+  rm $MODPATH/system/product/overlay/FontNotoSerifSource
+  rm $MODPATH/system/product/overlay/FontQuicksandSource
+  rm $MODPATH/system/product/overlay/FontRobotoSlabRegular
+}
+
 on_install() {
 
   android_check
@@ -64,15 +95,13 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motoactions.apk
+      rm $MODPATH/system/priv-app/MotoActions.apk
       sleep 1
     else
       ui_print "  Installing..."
-      mkdir -p $MODPATH/system/priv-app
-      mv -f $MODPATH/system/motoactions.apk $MODPATH/system/priv-app/MotoActions.apk
+      sleep 1
       ui_print "  Done"
       ui_print ""
-      sleep 1
     fi
 
     ui_print "• Do you want to install Moto Bootanimation?"
@@ -99,7 +128,7 @@ on_install() {
             else
               ui_print "      Installing..."
               mkdir -p $MODPATH/system/product/media
-              cp -f $MODPATH/system/motobootanimation30.zip $MODPATH/system/product/media/bootanimation.zip
+              cp -f $MODPATH/system/product/media/motobootanimation30.zip $MODPATH/system/product/media/bootanimation.zip
               ui_print "      Done"
               ui_print ""
               break
@@ -107,7 +136,7 @@ on_install() {
           else
             ui_print "      Installing..."
             mkdir -p $MODPATH/system/product/media
-            cp -f $MODPATH/system/motobootanimation29.zip $MODPATH/system/product/media/bootanimation.zip
+            cp -f $MODPATH/system/product/media/motobootanimation29.zip $MODPATH/system/product/media/bootanimation.zip
             ui_print "      Done"
             ui_print ""
             break
@@ -115,16 +144,16 @@ on_install() {
         else
           ui_print "      Installing..."
           mkdir -p $MODPATH/system/product/media
-          cp -f $MODPATH/system/motobootanimation17.zip $MODPATH/system/product/media/bootanimation.zip
+          cp -f $MODPATH/system/product/media/motobootanimation17.zip $MODPATH/system/product/media/bootanimation.zip
           ui_print "      Done"
           ui_print ""
           break
         fi
       done
     fi
-    rm $MODPATH/system/motobootanimation17.zip
-    rm $MODPATH/system/motobootanimation29.zip
-    rm $MODPATH/system/motobootanimation30.zip
+    rm $MODPATH/system/product/media/motobootanimation17.zip
+    rm $MODPATH/system/product/media/motobootanimation29.zip
+    rm $MODPATH/system/product/media/motobootanimation30.zip
 
     ui_print "• Do you want to install Moto Walls?"
     ui_print "  Volume up(+): Yes"
@@ -133,15 +162,13 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motowalls.zip
+      remove-motowalls
       sleep 1
     else
       ui_print "  Installing..."
-      unzip $MODPATH/system/motowalls.zip -d $MODPATH/system/
+      sleep 1
       ui_print "  Done"
       ui_print ""
-      rm $MODPATH/system/motowalls.zip
-      sleep 1
     fi
 
     ui_print "• Do you want to install Moto Clock Widget?"
@@ -151,15 +178,13 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motowidget.zip
+      remove-motowidget
       sleep 1
     else
       ui_print "  Installing..."
-      unzip -n $MODPATH/system/motowidget.zip -d $MODPATH/system/
+      sleep 1
       ui_print "  Done"
       ui_print ""
-      rm $MODPATH/system/motowidget.zip
-      sleep 1
     fi
     
   else
