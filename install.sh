@@ -82,10 +82,13 @@ on_install() {
   android_check
 
   if volume_keytest; then
+
+    ui_print "  Key test function complete"
+    ui_print ""
+    sleep 2
   
     unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
-
-    ui_print ""
+    
     ui_print "• Do you want to install Moto Actions?"
     ui_print "  Volume up(+): Yes"
     ui_print "  Volume down(-): No"
