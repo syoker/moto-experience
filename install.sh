@@ -14,6 +14,7 @@ print_modname() {
   ui_print ""
   ui_print "• Module by Syoker"
   ui_print ""
+  sleep 2
 }
 
 android_check() {
@@ -47,34 +48,34 @@ volume_key() {
 }
 
 remove-motowalls() {
-  rm $MODPATH/system/system_ext/priv-app/MotoLiveWallpaper3
+  rm $MODPATH/system/system_ext/priv-app/MotoLiveWallpaper3/*
   rm $MODPATH/system/system_ext/etc/permissions/afw-com.motorola.livewallpaper.xml
   rm $MODPATH/system/system_ext/etc/permissions/feature-com.motorola.motolivewallpaper3.xml
   rm $MODPATH/system/system_ext/sysconfig/hiddenapi-whitelist-com.motorola.livewallpaper.xml
-  rm $MODPATH/system/product/app/MotoLiveWallpaper
-  rm $MODPATH/system/product/app/MotoLiveWallpaper2
-  rm $MODPATH/system/product/app/MotoWalls
+  rm $MODPATH/system/product/app/MotoLiveWallpaper/*
+  rm $MODPATH/system/product/app/MotoLiveWallpaper2/*
+  rm $MODPATH/system/product/app/MotoWalls/*
   rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.support.astro.xml
   rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.support.racer.xml
   rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.support.titan.xml
   rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper.xml
   rm $MODPATH/system/product/etc/permissions/feature-com.motorola.motolivewallpaper3.xml
   rm $MODPATH/system/product/etc/sysconfig/hiddenapi-whitelist-com.motorola.livewallpaper.xml
-  rm $MODPATH/system/product/priv-app/MotoLiveWallpaper3
+  rm $MODPATH/system/product/priv-app/MotoLiveWallpaper3/*
 }
 
 remove-motowidget() {
   rm $MODPATH/system/etc/fonts.xml
-  rm $MODPATH/system/fonts
-  rm $MODPATH/system/product/app/TimeWeather
+  rm $MODPATH/system/fonts/*
+  rm $MODPATH/system/product/app/TimeWeather/*
   rm $MODPATH/system/product/etc/permissions/com.motorola.timeweatherwidget.xml
   rm $MODPATH/system/product/etc/sysconfig/hiddenapi-whitelist-com.motorola.timeweatherwidget.xml
-  rm $MODPATH/system/product/overlay/FontArchivoSemiBold
-  rm $MODPATH/system/product/overlay/FontBarlowSource
-  rm $MODPATH/system/product/overlay/FontExo2RegularSource
-  rm $MODPATH/system/product/overlay/FontNotoSerifSource
-  rm $MODPATH/system/product/overlay/FontQuicksandSource
-  rm $MODPATH/system/product/overlay/FontRobotoSlabRegular
+  rm $MODPATH/system/product/overlay/FontArchivoSemiBold/*
+  rm $MODPATH/system/product/overlay/FontBarlowSource/*
+  rm $MODPATH/system/product/overlay/FontExo2RegularSource/*
+  rm $MODPATH/system/product/overlay/FontNotoSerifSource/*
+  rm $MODPATH/system/product/overlay/FontQuicksandSource/*
+  rm $MODPATH/system/product/overlay/FontRobotoSlabRegular/*
 }
 
 on_install() {
