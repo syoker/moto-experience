@@ -1,6 +1,6 @@
 ## Changelog
 ### v1.1.2
-- Fix error instalation.
+- Fix error installation.
 [_Full changelog_]()
 
 ### v1.1.1
