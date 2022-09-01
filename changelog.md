@@ -1,4 +1,7 @@
 ## Changelog
+### v1.1.2
+- Fix error instalation.
+[_Full changelog_]()
 
 ### v1.1.1
 - Improved text log on installation.
