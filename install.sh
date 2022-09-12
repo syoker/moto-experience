@@ -68,15 +68,13 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motoactions.zip
+      rm $MODPATH/system/priv-app/motoactions.apk
       sleep 1
     else
       ui_print "  Installing..."
-      unzip $MODPATH/system/motoactions.zip -d $MODPATH/system/priv-app/
+      sleep 1
       ui_print "  Done"
       ui_print ""
-      rm $MODPATH/system/motoactions.zip
-      sleep 1
     fi
 
     ui_print "• Do you want to install Moto Bootanimation?"
