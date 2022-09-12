@@ -58,7 +58,6 @@ on_install() {
   
     unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
 
-    ui_print ""
     ui_print "• Do you want to install Moto Actions?"
     ui_print "  Volume up(+): Yes"
     ui_print "  Volume down(-): No"
