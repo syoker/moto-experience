@@ -5,7 +5,6 @@ LATESTARTSERVICE=false
 
 REPLACE="
 "
-
 print_modname() {
   ui_print ""
   ui_print "•••••••••••••••••••••••"
@@ -14,6 +13,38 @@ print_modname() {
   ui_print ""
   ui_print "• Module by Syoker"
   ui_print ""
+
+  sleep 2
+}
+
+online_check() {
+
+  CHECK=$($MODPATH/addon/curl -s -I http://www.google.com --connect-timeout 5 | grep "ok")
+  
+  if [ ! -z "$CHECK" ]; then
+    ui_print "• Network is Online"
+    sleep 1
+    ui_print ""
+  else
+    ui_print ""
+    ui_print "• Network is Offline"
+    ui_print "  If you have the offline version, select force install."
+    ui_print "  If you are using the online version, select abort and check"
+    ui_print "  your internet connection."
+    ui_print "  If you think this is a bug in the module, select force install."
+    ui_print ""
+    ui_print "  Volume up(+): Force install"
+    ui_print "  Volume down(-): Abort"
+    
+    SELECT=volume_key
+
+    if "$SELECT"; then
+      ui_print "  Aborting installation..."
+      exit 1
+    else
+      ui_print "  Forcing installation..."
+    fi
+  fi
 }
 
 android_check() {
@@ -28,7 +59,7 @@ android_check() {
 volume_keytest() {
   ui_print "• Volume Key Test"
   ui_print "  Please press any key volume:"
-  (/system/bin/getevent -lc 1 2>&1 | /system/bin/grep VOLUME | /system/bin/grep " DOWN" > "$TMPDIR"/events) || return 1
+  (timeout 5 /system/bin/getevent -lc 1 2>&1 | /system/bin/grep VOLUME | /system/bin/grep " DOWN" > "$TMPDIR"/events) || return 1
   return 0
 }
 
@@ -55,6 +86,8 @@ on_install() {
     ui_print "  Key test function complete"
     ui_print ""
     sleep 2
+
+    online_check
   
     unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
 
