@@ -50,7 +50,7 @@ online_check() {
 
 android_check() {
  if [[ $API < 29 ]]; then
-   ui_print "• Sorry, you need Android 10 or later to use this module."
+   ui_print "• Sorry, you need Android 10 on up to use this module."
    ui_print ""
    sleep 2
    exit 1
