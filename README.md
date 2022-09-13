@@ -2,7 +2,7 @@
 
 This module adds the features of the official Motorola One Fusion firmware (you can choose) in GSI.
 
-**NOTE:** There are intentions to create an online version, but for now there is only an offline version.
+> **NOTE:** There are intentions to create an online version, but for now there is only an offline version.
 
 ## Content
 - Moto Actions
