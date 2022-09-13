@@ -174,7 +174,11 @@ on_install() {
 
     if "$SELECT"; then
       ui_print "  Removing..."
-      rm $MODPATH/system/motocamera.tar.xz
+      rm $MODPATH/system/motocamera2.tar.xz
+      rm $MODPATH/system/motocamera2ai.tar.xz
+      rm $MODPATH/system/motocamera2props.tar.xz
+      rm $MODPATH/system/motocamera2tunner.tar.xz
+      rm $MODPATH/system/motophotoeditor.tar.xz
       sleep 1
       ui_print ""
     else
