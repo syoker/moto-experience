@@ -17,8 +17,16 @@ print_modname() {
   sleep 2
 }
 
-online_check() {
+android_check() {
+ if [[ $API < 29 ]]; then
+   ui_print "• Sorry, you need Android 10 on up to use this module."
+   ui_print ""
+   sleep 2
+   exit 1
+ fi
+}
 
+online_check() {
   CHECK=$($MODPATH/addon/curl -s -I http://www.google.com --connect-timeout 5 | grep "ok")
   
   if [ ! -z "$CHECK" ]; then
@@ -46,15 +54,6 @@ online_check() {
       ui_print ""
     fi
   fi
-}
-
-android_check() {
- if [[ $API < 29 ]]; then
-   ui_print "• Sorry, you need Android 10 on up to use this module."
-   ui_print ""
-   sleep 2
-   exit 1
- fi
 }
 
 volume_keytest() {
@@ -89,7 +88,7 @@ on_install() {
     sleep 2
 
     online_check
-  
+
     unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
 
     ui_print "• Do you want to install Moto Actions?"
@@ -101,17 +100,29 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motoactions.apk
+      if [ -f "$MODPATH/system/motoactions.apk" ]; then
+        rm $MODPATH/system/motoactions.apk
+      fi
       sleep 1
     else
       ui_print "  Installing..."
-      mkdir $MODPATH/system/priv-app/
-      cp -f $MODPATH/system/motoactions.apk $MODPATH/system/priv-app/motoactions.apk
-      rm $MODPATH/system/motoactions.apk
+      if [ -f "$MODPATH/system/motoactions.apk"]; then
+        mkdir $MODPATH/system/priv-app/
+        mv -f $MODPATH/system/motoactions.apk $MODPATH/system/priv-app/motoactions.apk
+      else
+        cd $MODPATH/system
+        $MODPATH/addon/curl https://github.com/Syoker/moto-experience/blob/main/system/motoactions.apk -o motoactions.apk
+        cd /
+        mkdir $MODPATH/system/priv-app/
+        mv -f $MODPATH/system/motoactions.apk $MODPATH/system/priv-app/motoactions.apk
+      fi
       sleep 1
       ui_print "  Done"
       ui_print ""
     fi
+
+    ui_print "test"
+    exit 1
 
     ui_print "• Do you want to install Moto Bootanimation?"
     ui_print "  Volume up(+): Yes"
