@@ -71,7 +71,7 @@ on_install() {
       sleep 1
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motoactions.tar.xz -d $MODPATH/system/
+      tar -xf $MODPATH/system/motoactions.tar.xz -C $MODPATH/system/
       rm $MODPATH/system/motoactions.tar.xz
       sleep 1
       ui_print "  Done"
@@ -143,7 +143,7 @@ on_install() {
       ui_print ""
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motowalls.tar.xz -d $MODPATH/system/
+      tar -xf $MODPATH/system/motowalls.tar.xz -C $MODPATH/system/
       rm $MODPATH/system/motowalls.tar.xz
       sleep 1
       ui_print "  Done"
@@ -161,7 +161,7 @@ on_install() {
       ui_print ""
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motowidget.tar.xz -d $MODPATH/system/
+      tar -xf $MODPATH/system/motowidget.tar.xz -C $MODPATH/system/
       rm $MODPATH/system/motowidget.tar.xz
       sleep 1
       ui_print "  Done"
@@ -183,11 +183,11 @@ on_install() {
       ui_print ""
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motocamera2.tar.xz -d $MODPATH/system/
-      tar -xf $MODPATH/system/motocamera2ai.tar.xz -d $MODPATH/system/
-      tar -xf $MODPATH/system/motocamera2props.tar.xz -d $MODPATH/system/
-      tar -xf $MODPATH/system/motocamera2tunner.tar.xz -d $MODPATH/system/
-      tar -xf $MODPATH/system/motophotoeditor.tar.xz -d $MODPATH/system/
+      tar -xf $MODPATH/system/motocamera2.tar.xz -C $MODPATH/system/
+      tar -xf $MODPATH/system/motocamera2ai.tar.xz -C $MODPATH/system/
+      tar -xf $MODPATH/system/motocamera2props.tar.xz -C $MODPATH/system/
+      tar -xf $MODPATH/system/motocamera2tunner.tar.xz -C $MODPATH/system/
+      tar -xf $MODPATH/system/motophotoeditor.tar.xz -C $MODPATH/system/
       rm $MODPATH/system/motocamera2.tar.xz
       rm $MODPATH/system/motocamera2ai.tar.xz
       rm $MODPATH/system/motocamera2props.tar.xz
