@@ -26,7 +26,6 @@ online_check() {
     sleep 1
     ui_print ""
   else
-    ui_print ""
     ui_print "• Network is Offline"
     ui_print "  If you have the offline version, select force install."
     ui_print "  If you are using the online version, select abort and check"
@@ -40,9 +39,11 @@ online_check() {
 
     if "$SELECT"; then
       ui_print "  Aborting installation..."
+      ui_print ""
       exit 1
     else
       ui_print "  Forcing installation..."
+      ui_print ""
     fi
   fi
 }
