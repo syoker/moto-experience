@@ -1,5 +1,9 @@
 ## Changelog
 
+### v1.2.0
+- Improved log in installation
+- Added Moto Camera 2 (by [Nemesis Team](https://gitlab.com/NemesisDevelopers))
+
 ### v1.1.2
 - Better log for MotoActions installation
 

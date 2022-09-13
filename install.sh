@@ -67,12 +67,13 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motoactions.tar.xz
+      rm $MODPATH/system/motoactions.apk
       sleep 1
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motoactions.tar.xz -C $MODPATH/system/
-      rm $MODPATH/system/motoactions.tar.xz
+      mkdir $MODPATH/system/priv-app/
+      cp -f $MODPATH/system/motoactions.apk $MODPATH/system/priv-app/motoactions.apk
+      rm $MODPATH/system/motoactions.apk
       sleep 1
       ui_print "  Done"
       ui_print ""
