@@ -67,12 +67,12 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/motoactions.tar
+      rm $MODPATH/system/motoactions.tar.xz
       sleep 1
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motoactions.tar
-      rm $MODPATH/system/motoactions.tar
+      tar -xf $MODPATH/system/motoactions.tar.xz
+      rm $MODPATH/system/motoactions.tar.xz
       sleep 1
       ui_print "  Done"
       ui_print ""
@@ -138,13 +138,13 @@ on_install() {
 
     if "$SELECT"; then
       ui_print "  Removing..."
-      rm $MODPATH/system/motowalls.tar
+      rm $MODPATH/system/motowalls.tar.xz
       sleep 1
       ui_print ""
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motowalls.tar
-      rm $MODPATH/system/motowalls.tar
+      tar -xf $MODPATH/system/motowalls.tar.xz
+      rm $MODPATH/system/motowalls.tar.xz
       sleep 1
       ui_print "  Done"
       ui_print ""
@@ -156,13 +156,13 @@ on_install() {
 
     if "$SELECT"; then
       ui_print "  Removing..."
-      rm $MODPATH/system/motowidget.tar
+      rm $MODPATH/system/motowidget.tar.xz
       sleep 1
       ui_print ""
     else
       ui_print "  Installing..."
-      tar -xf $MODPATH/system/motowidget.tar
-      rm $MODPATH/system/motowidget.zip
+      tar -xf $MODPATH/system/motowidget.tar.xz
+      rm $MODPATH/system/motowidget.tar.xz
       sleep 1
       ui_print "  Done"
       ui_print ""
@@ -173,9 +173,26 @@ on_install() {
     ui_print "  Volume down(-): No"
 
     if "$SELECT"; then
-    ui_print "  Removing..."
-    rm $MODPATH/system/motocamera.tar
-    
+      ui_print "  Removing..."
+      rm $MODPATH/system/motocamera.tar.xz
+      sleep 1
+      ui_print ""
+    else
+      ui_print "  Installing..."
+      tar -xf $MODPATH/system/motocamera2.tar.xz
+      tar -xf $MODPATH/system/motocamera2ai.tar.xz
+      tar -xf $MODPATH/system/motocamera2props.tar.xz
+      tar -xf $MODPATH/system/motocamera2tunner.tar.xz
+      tar -xf $MODPATH/system/motophotoeditor.tar.xz
+      rm $MODPATH/system/motocamera2.tar.xz
+      rm $MODPATH/system/motocamera2ai.tar.xz
+      rm $MODPATH/system/motocamera2props.tar.xz
+      rm $MODPATH/system/motocamera2tunner.tar.xz
+      rm $MODPATH/system/motophotoeditor.tar.xz
+      sleep 1
+      ui_print "  Done"
+      ui_print ""
+    fi
     
   else
     ui_print "  You have not pressed any key, aborting installation."
