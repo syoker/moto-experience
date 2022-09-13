@@ -89,7 +89,7 @@ on_install() {
     else
       ui_print "  Which bootanimation do you want?"
       ui_print "  Volume up(+): Install bootanimation"
-      ui_print "  Volume down(-): Other bootanimation"
+      ui_print "  Volume down(-): Another bootanimation"
       ui_print ""
       while (true); do
         ui_print "  1 - Moto Bootanimation 2013"
