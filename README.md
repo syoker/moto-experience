@@ -7,12 +7,9 @@ This module adds the features of the official Motorola One Fusion firmware (you 
 ## Content
 - Moto Actions
 - Moto Bootanimation 2013, 2020 & 2021
-- Moto Live Wallpaper
-> Update in the Play Store
-- Moto Clock Widget
-> Update in the Play Store
-- Moto Camera 2 (by Nemesis Team)
-> Don't update
+- Moto Live Wallpaper > (Update in the Play Store)
+- Moto Clock Widget (Update in the Play Store)
+- Moto Camera 2 (by Nemesis Team) (Don't update)
 
 ## Requirements
 - Android 10 on up
