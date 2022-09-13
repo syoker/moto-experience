@@ -67,10 +67,12 @@ on_install() {
     if "$SELECT"; then
       ui_print "  Removing..."
       ui_print ""
-      rm $MODPATH/system/priv-app/motoactions.apk
+      rm $MODPATH/system/motoactions.tar
       sleep 1
     else
       ui_print "  Installing..."
+      tar -xf $MODPATH/system/motoactions.tar
+      rm $MODPATH/system/motoactions.tar
       sleep 1
       ui_print "  Done"
       ui_print ""
@@ -81,7 +83,7 @@ on_install() {
     ui_print "  Volume down(-): No"
 
     if "$SELECT"; then
-      ui_print "  Removing Moto Bootanimation"
+      ui_print "  Removing..."
       ui_print ""
       sleep 1
     else
@@ -101,6 +103,7 @@ on_install() {
               ui_print "      Installing..."
               mkdir -p $MODPATH/system/product/media
               cp -f $MODPATH/system/motobootanimation30.zip $MODPATH/system/product/media/bootanimation.zip
+              sleep 1
               ui_print "      Done"
               ui_print ""
               break
@@ -109,6 +112,7 @@ on_install() {
             ui_print "      Installing..."
             mkdir -p $MODPATH/system/product/media
             cp -f $MODPATH/system/motobootanimation29.zip $MODPATH/system/product/media/bootanimation.zip
+            sleep 1
             ui_print "      Done"
             ui_print ""
             break
@@ -117,6 +121,7 @@ on_install() {
           ui_print "      Installing..."
           mkdir -p $MODPATH/system/product/media
           cp -f $MODPATH/system/motobootanimation17.zip $MODPATH/system/product/media/bootanimation.zip
+          sleep 1
           ui_print "      Done"
           ui_print ""
           break
@@ -133,16 +138,16 @@ on_install() {
 
     if "$SELECT"; then
       ui_print "  Removing..."
-      ui_print ""
-      rm $MODPATH/system/motowalls.zip
+      rm $MODPATH/system/motowalls.tar
       sleep 1
+      ui_print ""
     else
       ui_print "  Installing..."
-      unzip $MODPATH/system/motowalls.zip -d $MODPATH/system/
+      tar -xf $MODPATH/system/motowalls.tar
+      rm $MODPATH/system/motowalls.tar
+      sleep 1
       ui_print "  Done"
       ui_print ""
-      rm $MODPATH/system/motowalls.zip
-      sleep 1
     fi
 
     ui_print "• Do you want to install Moto Clock Widget?"
@@ -151,17 +156,26 @@ on_install() {
 
     if "$SELECT"; then
       ui_print "  Removing..."
-      ui_print ""
-      rm $MODPATH/system/motowidget.zip
+      rm $MODPATH/system/motowidget.tar
       sleep 1
+      ui_print ""
     else
       ui_print "  Installing..."
-      unzip -n $MODPATH/system/motowidget.zip -d $MODPATH/system/
-      ui_print "  Done"
-      ui_print ""
+      tar -xf $MODPATH/system/motowidget.tar
       rm $MODPATH/system/motowidget.zip
       sleep 1
+      ui_print "  Done"
+      ui_print ""
     fi
+
+    ui_print "• Do you want to install Moto Camera 2?"
+    ui_print "  Volume up(+): Yes"
+    ui_print "  Volume down(-): No"
+
+    if "$SELECT"; then
+    ui_print "  Removing..."
+    rm $MODPATH/system/motocamera.tar
+    
     
   else
     ui_print "  You have not pressed any key, aborting installation."
