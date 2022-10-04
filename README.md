@@ -4,6 +4,9 @@ This module adds the features of the official Motorola One Fusion firmware (you 
 
 > **NOTE:** There are intentions to create an online version, but for now there is only an offline version.
 
+![Release date](https://img.shields.io/github/release-date/syoker/moto-experience)
+![Downloads](https://img.shields.io/github/downloads/syoker/moto-experience/total)
+
 ## Content
 - Moto Actions
 - Moto Bootanimation [2013](https://telegra.ph/file/fa741361bb36eafef7470.mp4), [2020](https://telegra.ph/file/8c8694f2ef11d02678a50.mp4) & [2021](https://telegra.ph/file/a938a5b434c23713570a2.mp4).
