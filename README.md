@@ -4,6 +4,8 @@ This module adds the features of the official Motorola One Fusion firmware (you 
 
 ![](https://raw.githubusercontent.com/syoker/moto-experience/main/.github/img/image.png)
 
+> **Note:** Stopped development
+
 ![Release date](https://img.shields.io/github/release-date/syoker/moto-experience)
 ![Downloads](https://img.shields.io/github/downloads/syoker/moto-experience/total)
 
